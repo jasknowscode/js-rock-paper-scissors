@@ -7,37 +7,21 @@
 </head>
 <body>
     <script>
-            // Create function for getComputerChoice and create conditions to return strings "Rock, Paper, Scissors //
-        
+        // Create function for getComputerChoice//
         function getComputerChoice() {
+        const x =  Math.random() * 3;
 
-            const choice = ("Rock", "Paper", "Scissors");
-            let randomNumber = Math.random();
-
-
-            if (randomNumber = 0) {
-                alert = "Rock";
-            }   
-            
-            if (randomNumber = 1) {
-                alert = "Paper";
-            
-            if (randomNumber = 2)  {
-                alert = "Scissors";
+            if (x < 1) {
+                return ("Rock")
             }
-        }
-            return choice;
-        }
-
+            else if (x >= 2) {
+                return ("Paper")
+            }
+            else {
+                return ("Scissors")
+            }
+        } 
         console.log(getComputerChoice());
-            
-            
-        // getComputerChoice randomly returns rock, paper or scissors //
-        // Decide values of each compared to one another //
-        // Return random choice set before user input //
-        // If user inputs the same as getComputerChoice = "Tie" //
-        // If user inputs something < getComputerChoice = "User Loses" //
-        // If user inputs something > getComputerChoice = "User Wins" //
     </script>
 </body>
 </html>
