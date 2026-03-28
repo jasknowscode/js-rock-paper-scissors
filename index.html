@@ -39,13 +39,23 @@
 
         function playRound(humanChoice, computerChoice) {
             // Assign strings to variables //
+            const r = "rock"
+            const p = "paper"
+            const s = "scissors"
             
-            
+            if (r < p) {
+                return ("Paper beats rock.")
+            }
+            else if (s > p) {
+                return ("Scissors beats paper.")
+            }
+            else if (r > s) {
+                return ("Rock beats scissors.")
+            }
         }
 
         console.log(playRound("You lose! ${computerChoice} beats ${humanChoice}"));
-        console.log(playRound("It's a tie!"));
-        console.log(playRound("You win! ${humanChoice} beats ${computerChoice}"));
+
     
     </script>
 </body>
