@@ -7,9 +7,13 @@
 </head>
 <body>
     <script>
-        // Create function for getComputerChoice//
+
+        let humanScore = 0;
+        let computerScore = 0;
+
+
         function getComputerChoice() {
-        const x =  Math.random() * 3;
+            const x =  Math.random() * 3;
 
             if (x < 1) {
                 return ("Rock")
@@ -21,7 +25,28 @@
                 return ("Scissors")
             }
         } 
+
         console.log(getComputerChoice());
+
+
+        function getHumanChoice() {
+            let answer = (prompt("Please enter your choice of Rock, Paper, or Scissors"));
+                return answer;
+        }
+
+        console.log(getHumanChoice());
+
+
+        function playRound(humanChoice, computerChoice) {
+            // Assign strings to variables //
+            
+            
+        }
+
+        console.log(playRound("You lose! ${computerChoice} beats ${humanChoice}"));
+        console.log(playRound("It's a tie!"));
+        console.log(playRound("You win! ${humanChoice} beats ${computerChoice}"));
+    
     </script>
 </body>
 </html>
