@@ -26,38 +26,39 @@
             }
         } 
 
-        // console.log(getComputerChoice()); //
+        console.log(getComputerChoice());
 
 
         function getHumanChoice() {
-            let answer = (prompt("Please enter your choice of Rock, Paper, or Scissors"));
+            const answer = (prompt("Please enter your choice of Rock, Paper, or Scissors"));
                 return answer;
         }
 
-       // console.log(getHumanChoice()); //
-
+        // console.log(getHumanChoice()); //
+        
 
         function playRound(humanChoice, computerChoice) {
             // Define parameters //
-            let a = humanChoice
-            let b = computerChoice
             // Define values of moves player plays //
+                
 
-
-                if (a === b) {
+                if (humanChoice === computerChoice) {
                     return ("It's a tie!")
                 }
-                else if (a > b) {
-                    return (`${a} is greater than ${b}`)
+            // If human choice  - human wins //
+                else if (humanChoice = ("Rock")) {
+                    return ("You win!")
                 }
-                else (a < b) 
-                    return (`${a} is less than ${b}`)
-                }
+                //else (humanChoice ) {
+                 //   return ("Ouch! You lose.") //
+        }
         
-
-        console.log(getComputerChoice());
-        console.log(getHumanChoice());
-        console.log(playRound("You lose! ${computerChoice} beats ${humanChoice}"));
+        if (humanChoice) { 
+            console.log(playRound(humanChoice));
+        }
+        else if (computerChoice) {
+            console.log(playRound(computerChoice))
+        }
 
     
     </script>
