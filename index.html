@@ -7,11 +7,6 @@
 </head>
 <body>
     <script>
-
-        let humanScore = 0;
-        let computerScore = 0;
-
-
         function getComputerChoice() {
             const x =  Math.random() * 3;
 
@@ -24,7 +19,7 @@
             else {
                 return ("Scissors")
             }
-        } 
+        }; 
 
         console.log(getComputerChoice());
 
@@ -32,33 +27,41 @@
         function getHumanChoice() {
             const answer = (prompt("Please enter your choice of Rock, Paper, or Scissors"));
                 return answer;
-        }
+        };
 
-        // console.log(getHumanChoice()); //
+        console.log(getHumanChoice()); 
         
+        // get the humanChoice //
+        // get the computerChoice //
+        // if choices are the same, tie //
+        // if human has 1 of 3 match ups, human wins //
+        // else human loses //
+        // log round winner //
 
-        function playRound(humanChoice, computerChoice) {
-            // Define parameters //
-            // Define values of moves player plays //
-                
+        function playGame(playRound) {
+        
+            humanScore = 0;
+            computerScore = 0;
+
+            function playRound(humanChoice, computerChoice) {
 
                 if (humanChoice === computerChoice) {
-                    return ("It's a tie!")
+                    return ("It's a tie");
                 }
-            // If human choice  - human wins //
-                else if (humanChoice = ("Rock")) {
-                    return ("You win!")
+                else if ((humanChoice === "Rock" && computerChoice === "Scissors"), (humanChoice === "Paper" && computerChoice === "Rock"), (humanChoice === "Scissors" && computerChoice === "Paper")) {
+                    return ("You won!")
                 }
-                //else (humanChoice ) {
-                 //   return ("Ouch! You lose.") //
-        }
+                else {
+                    return ("You lost!")
+                }
+
+            };
+        };
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+
+        console.log(playRound((humanSelection, computerSelection) * 5));
         
-        if (humanChoice) { 
-            console.log(playRound(humanChoice));
-        }
-        else if (computerChoice) {
-            console.log(playRound(computerChoice))
-        }
 
     
     </script>
