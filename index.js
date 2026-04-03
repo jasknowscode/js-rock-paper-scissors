@@ -13,11 +13,11 @@
             }
         }; 
 
-        // console.log(getComputerChoice()); //
+            console.log(getComputerChoice()); 
         // Prompt user to enter three choices making the answer case sensitive//
         function getHumanChoice() {
             const answer = (prompt("Please enter your choice of Rock, Paper, or Scissors"));
-                return answer.toUpperCase();
+                return answer.toLowerCase();
         };
 
         // console.log(getHumanChoice()); //
@@ -30,29 +30,28 @@
 
             function playRound(humanChoice, computerChoice) {
 
-                const humanChoice = getHumanChoice();
-                const computerChoice = getComputerChoice();
-
                 if  (humanChoice === computerChoice) { 
                     return "It's a tie";
                 }
-                else if      ((humanChoice === "Rock" && computerChoice === "Scissors") ||
-                         (humanChoice === "Paper" && computerChoice === "Rock") || 
-                         (humanChoice === "Scissors" && computerChoice === "Paper")) {
-                    return "You won!";
+                else if ((humanChoice === "rock" && computerChoice === "scissors") ||
+                         (humanChoice === "paper" && computerChoice === "rock") || 
+                         (humanChoice === "scissors" && computerChoice === "paper")) {
+                    humanScore++;
+                    console.log("You win!");
                 }
                 else {
-                    return "You lost!";
+                    computerScore++;
+                    console.log("Computer wins!");
                 }
-
             };
 
-            console.log(playRound(humanScore++))
-            console.log(playRound(computerScore++))
+            const humanSelection = getHumanChoice();
+            const computerSelection = getComputerChoice();
+
+            console.log(playRound(humanSelection, computerSelection));
+
+            // Play five rounds calling choice function result for each round //
         }
 
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-
-        console.log(playGame(humanSelection || computerSelection));
+        console.log(playGame());
         
