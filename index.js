@@ -14,52 +14,57 @@
             }
         }; 
 
-        //   console.log(getComputerChoice()); //
         // Prompt user to enter three choices making the answer case sensitive //
 
         function getHumanChoice() {
 
-            const answer = (prompt("Please enter your choice of Rock, Paper, or Scissors"));
-                console.log(answer);
+            let answer = prompt("Please enter your choice of Rock, Paper, or Scissors")
+                return answer.toUpperCase();
         };
 
-        // console.log(getHumanChoice()); //
+        console.log(getComputerChoice());
+        console.log(getHumanChoice());
+
+        // Starting score for human and computer //
+        // Take human and computer choices and compare. Winning combinations return "winner" and increment score by one. //
+        // Log the round winner //
+        // Play five rounds calling choice function result for each round //
 
         function playGame(playRound) {
 
-        // Starting score for human and computer //
+            
 
-        let humanScore = 0;
-        let computerScore = 0;
+            humanChoice = getHumanChoice();
+            computerChoice = getComputerChoice();
 
-        // Take human and computer choices and compare. Winning combinations return "winner" and increment score by one. //
-        // Log the round winner //
+            let humanScore = 0;
+            let computerScore = 0;
 
             function playRound(humanChoice, computerChoice) {
 
-                if  (humanChoice === computerChoice) { 
+                const h = humanChoice;
+                const c = computerChoice;
+
+                if  (h === c) {
                     console.log("It's a tie");
-                }
-                else if ((humanChoice === "rock" && computerChoice === "scissors") ||
-                         (humanChoice === "paper" && computerChoice === "rock") || 
-                         (humanChoice === "scissors" && computerChoice === "paper")) {
-                    console.log("You're the winner of this round," + " " + humanChoice + " " + "beats" + " " + computerChoice)
+                } else if ((h === "Rock" && c === "Scissors") ||
+                           (h === "Paper" && c === "Rock") || 
+                           (h === "Scissors" && c === "Paper")) {
+                    console.log("You're the winner of this round, " + h  + " beats " + c)
                     humanScore++;
-                }
-                else {
+                } else {
                     console.log("The computer wins this round!");
                     computerScore++;
                 }
             };
-            console.log(playRound())
+            
+            console.log(playRound(humanChoice, computerChoice));
 
-            const humanSelection = getHumanChoice();
-            const computerSelection = getComputerChoice();  
-
-        // Play five rounds calling choice function result for each round //
         }
 
-         console.log(playGame());
+        console.log(playGame());
+
+         
 
        
         
