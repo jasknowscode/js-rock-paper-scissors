@@ -57,8 +57,8 @@
             };
 
 
-            for (i = 0; i < 0; i++) {
-                playRound();
+            for (i = 0; i > 0; i++) {
+                playRound(humanChoice, computerChoice);
             }
 
             if (humanScore > computerScore) {
@@ -77,4 +77,4 @@
         // Announce winner of game at the end of five rounds // 
         };
 
-        console.log(playGame());   
+        console.log(playGame(playRound * 5));   
