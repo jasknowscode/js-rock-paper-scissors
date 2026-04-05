@@ -1,16 +1,16 @@
         // Generate three random computer choices "Rock, Paper, Scissors" //
 
         function getComputerChoice() {
-            const x =  Math.random() * 3;
+            const x =  (Math.random() * 3);
 
             if (x < 1) {
-                return ("Rock")
+                return ("ROCK");
             }
             else if (x >= 2) {
-                return ("Paper")
+                return ("PAPER");
             }
             else {
-                return ("Scissors")
+                return ("SCISSORS");
             }
         }; 
 
@@ -22,8 +22,8 @@
                 return answer.toUpperCase();
         };
 
-        console.log(getComputerChoice());
-        console.log(getHumanChoice());
+        // console.log(getComputerChoice());
+        // console.log(getHumanChoice());
 
         // Starting score for human and computer //
         // Take human and computer choices and compare. Winning combinations return "winner" and increment score by one. //
@@ -32,10 +32,8 @@
 
         function playGame(playRound) {
 
-            
-
-            humanChoice = getHumanChoice();
-            computerChoice = getComputerChoice();
+            const humanChoice = getHumanChoice();
+            const computerChoice = getComputerChoice();
 
             let humanScore = 0;
             let computerScore = 0;
@@ -47,9 +45,9 @@
 
                 if  (h === c) {
                     console.log("It's a tie");
-                } else if ((h === "Rock" && c === "Scissors") ||
-                           (h === "Paper" && c === "Rock") || 
-                           (h === "Scissors" && c === "Paper")) {
+                } else if ((h === "ROCK" && c === "SCISSORS") ||
+                           (h === "PAPER" && c === "ROCK") || 
+                           (h === "SCISSORS" && c === "PAPER")) {
                     console.log("You're the winner of this round, " + h  + " beats " + c)
                     humanScore++;
                 } else {
@@ -57,14 +55,26 @@
                     computerScore++;
                 }
             };
-            
-            console.log(playRound(humanChoice, computerChoice));
 
-        }
 
-        console.log(playGame());
+            for (i = 0; i < 0; i++) {
+                playRound();
+            }
 
-         
+            if (humanScore > computerScore) {
+                console.log('Congratulations you won the game ' + humanScore);
+            }
+            else if (computerScore > humanScore) {
+                console.log('You lost the game! Computer wins ' + computerScore);
+            }
+            else {
+                console.log('The game is a tie!')
+            }
+                    
+            console.log(playRound());
 
-       
-        
+        // Recall human and computer choices for five rounds, choosing a winner each round and increasing point. //
+        // Announce winner of game at the end of five rounds // 
+        };
+
+        console.log(playGame());   
