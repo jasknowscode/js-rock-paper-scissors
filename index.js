@@ -1,53 +1,73 @@
-        // Generate three random computer choices "Rock, Paper, Scissors" //
+        // Create a function that takes a number between 0 and 3 (1, 2, 3)
+        // And rounds to the nearest whole number to return a string
+        // Return a string of 3 outcomes "Rock, Paper, Scissors"
 
         function getComputerChoice() {
-            const x =  (Math.random() * 3);
+            let computerChoice =  Math.floor().Math.random(1, 2, 3) * 3;
 
-            if (x < 1) {
+            if (computerChoice <= 1) {
                 return ("ROCK");
             }
-            else if (x >= 2) {
+            if (computerChoice >= 2) {
                 return ("PAPER");
             }
             else {
                 return ("SCISSORS");
             }
-        }; 
 
-        // Prompt user to enter three choices making the answer case sensitive //
+        }; 
+            console.log(getComputerChoice);
+
+        // Prompt user to enter three choices making the answer case sensitive
+        // Return value to of human choice
+        // Create a function where the human and computer choices are compared
+        // Put human and computer score in a variable
+        // After each cycle through comparison - console.log or alert winner
+        // Increment score after each round and announce round winner
+        // After five rounds, log game winner and loop ends (return to document object)
 
         function getHumanChoice() {
 
             let answer = prompt("Please enter your choice of Rock, Paper, or Scissors")
-                return answer.toUpperCase();
+                answer.toUpperCase();
         };
+        return getHumanChoice();
 
-        // console.log(getComputerChoice());
-        // console.log(getHumanChoice());
-
-        // Starting score for human and computer //
-        // Take human and computer choices and compare. Winning combinations return "winner" and increment score by one. //
-        // Log the round winner //
-        // Play five rounds calling choice function result for each round //
+        // To play the game you need to run a function and call human
+        // And computer choice functions; announce a winner
+        // Increment after announcement 
+        // Commence next round
 
         function playGame(playRound) {
-
-            const humanChoice = getHumanChoice();
-            const computerChoice = getComputerChoice();
 
             let humanScore = 0;
             let computerScore = 0;
 
+            for (let playRound = 0; playRound < 5; playRound++) {
+
+                if (humanScore > computerScore) {
+                console.log(playRound = humanScore++);
+                }
+                else if (computerScore > humanScore) {
+                console.log(playRound = computerScore++);
+                }
+                else {
+                console.log();
+                }
+            };
+
+            return playRound;
+
             function playRound(humanChoice, computerChoice) {
 
-                const h = humanChoice;
-                const c = computerChoice;
+                const humanChoice = getHumanChoice();
+                const computerChoice = getComputerChoice();
 
-                if  (h === c) {
+                if  (humanChoice === computerChoice) {
                     console.log("It's a tie");
-                } else if ((h === "ROCK" && c === "SCISSORS") ||
-                           (h === "PAPER" && c === "ROCK") || 
-                           (h === "SCISSORS" && c === "PAPER")) {
+                } else if ((humanChoice === "ROCK" && computerChoice === "SCISSORS") ||
+                           (humanChoice === "PAPER" && computerChoice === "ROCK") || 
+                           (humanChoice === "SCISSORS" && computerChoice === "PAPER")) {
                     console.log("You're the winner of this round, " + h  + " beats " + c)
                     humanScore++;
                 } else {
@@ -55,26 +75,6 @@
                     computerScore++;
                 }
             };
+        }
 
 
-            for (i = 0; i > 0; i++) {
-                playRound(humanChoice, computerChoice);
-            }
-
-            if (humanScore > computerScore) {
-                console.log('Congratulations you won the game ' + humanScore);
-            }
-            else if (computerScore > humanScore) {
-                console.log('You lost the game! Computer wins ' + computerScore);
-            }
-            else {
-                console.log('The game is a tie!')
-            }
-                    
-            console.log(playRound());
-
-        // Recall human and computer choices for five rounds, choosing a winner each round and increasing point. //
-        // Announce winner of game at the end of five rounds // 
-        };
-
-        console.log(playGame(playRound * 5));   
