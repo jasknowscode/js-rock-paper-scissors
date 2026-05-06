@@ -1,9 +1,16 @@
+        
         // Create a function that takes a number between 0 and 3 (1, 2, 3)
         // And rounds to the nearest whole number to return a string
         // Return a string of 3 outcomes "Rock, Paper, Scissors"
 
+        let computerChoice =  Math.floor().Math.random(1, 2, 3) * 3;
+        let humanChoice = prompt("Please enter your choice of Rock, Paper, or Scissors")
+            answer.toUpperCase();
+
+        let humanScore = 0;
+        let computerScore = 0;
+
         function getComputerChoice() {
-            let computerChoice =  Math.floor().Math.random(1, 2, 3) * 3;
 
             if (computerChoice <= 1) {
                 return ("ROCK");
@@ -15,8 +22,46 @@
                 return ("SCISSORS");
             }
 
-        }; 
-            console.log(getComputerChoice);
+        };
+        
+        function playGame(playRound) {
+
+            for (let playRound = 0; ; playRound++) {
+
+                if (humanScore > computerScore) {
+                playRound = humanScore++;
+                }
+                if (computerScore > humanScore) {
+                playRound = computerScore++;
+                }
+            };
+
+            function playRound(humanChoice, computerChoice) {
+
+
+                if  (humanChoice === computerChoice) {
+                    playRound.textContent = "It's a tie";
+                } else if ((humanChoice === "ROCK" && computerChoice === "SCISSORS") ||
+                           (humanChoice === "PAPER" && computerChoice === "ROCK") || 
+                           (humanChoice === "SCISSORS" && computerChoice === "PAPER")) {
+                    playRound.textContent = ("You're the winner of this round, ") + humanChoice  + (" beats ") + computerChoice;
+                    humanScore++;
+                } else {
+                    playRound.textContent = "The computer wins this round!";
+                    computerScore++;
+                }
+            };
+        }
+        
+        const rockBtn = document.getElementById('#rock');
+        const paperBtn = document.getElementById('#paper');
+        const scissorsBtn = document.getElementById('#scissors');
+
+        rockBtn.addEventListener('click', () => playRound('ROCK'));
+        paperBtn.addEventListener('click', () => playRound('PAPER'));
+        scissorsBtn.addEventListener('click', () => playRound('SCISSORS'));
+
+        const results = document.getElementById('#results');
 
         // Prompt user to enter three choices making the answer case sensitive
         // Return value to of human choice
@@ -25,56 +70,13 @@
         // After each cycle through comparison - console.log or alert winner
         // Increment score after each round and announce round winner
         // After five rounds, log game winner and loop ends (return to document object)
-
-        function getHumanChoice() {
-
-            let answer = prompt("Please enter your choice of Rock, Paper, or Scissors")
-                answer.toUpperCase();
-        };
-        return getHumanChoice();
-
         // To play the game you need to run a function and call human
         // And computer choice functions; announce a winner
         // Increment after announcement 
         // Commence next round
 
-        function playGame(playRound) {
+        
 
-            let humanScore = 0;
-            let computerScore = 0;
 
-            for (let playRound = 0; playRound < 5; playRound++) {
-
-                if (humanScore > computerScore) {
-                console.log(playRound = humanScore++);
-                }
-                else if (computerScore > humanScore) {
-                console.log(playRound = computerScore++);
-                }
-                else {
-                console.log();
-                }
-            };
-
-            return playRound;
-
-            function playRound(humanChoice, computerChoice) {
-
-                const humanChoice = getHumanChoice();
-                const computerChoice = getComputerChoice();
-
-                if  (humanChoice === computerChoice) {
-                    console.log("It's a tie");
-                } else if ((humanChoice === "ROCK" && computerChoice === "SCISSORS") ||
-                           (humanChoice === "PAPER" && computerChoice === "ROCK") || 
-                           (humanChoice === "SCISSORS" && computerChoice === "PAPER")) {
-                    console.log("You're the winner of this round, " + h  + " beats " + c)
-                    humanScore++;
-                } else {
-                    console.log("The computer wins this round!");
-                    computerScore++;
-                }
-            };
-        }
 
 
